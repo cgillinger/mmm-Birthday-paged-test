@@ -24,7 +24,7 @@ cd ~/MagicMirror/modules
 
 2. Clone this repository:
 ```bash
-git clone https://github.com/cgillinger/MMM-Birthday-Paged.git
+git clone https://github.com/cgillinger/MMM-Birthday-Paged-test.git
 ```
 
 3. Install dependencies:
