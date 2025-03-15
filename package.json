@@ -1,0 +1,25 @@
+{
+    "name": "MMM-Birthday-Paged",
+    "version": "1.0.0",
+    "description": "A MagicMirror² module for birthday celebrations with fireworks and confetti, optimized for page-switching modules",
+    "main": "MMM-Birthday-Paged.js",
+    "author": "Christian Gillinger",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cgillinger/MMM-Birthday-Paged.git"
+    },
+    "dependencies": {
+        "canvas-confetti": "^1.9.3"
+    },
+    "keywords": [
+        "MagicMirror²",
+        "birthday",
+        "fireworks",
+        "confetti",
+        "celebration",
+        "module",
+        "MMM-pages",
+        "MMM-Carousel"
+    ]
+}

@@ -1,0 +1,94 @@
+/**
+ * @file MMM-Birthday-Paged.css
+ * @description Styles for the MMM-Birthday-Paged module
+ * @author Christian Gillinger
+ * @license MIT
+ * @version 1.1.0
+ * 
+ * Core styling for birthday celebration displays and animations.
+ * Optimized for use with page-switching modules.
+ */
+
+/* Main module container - centered overlay */
+.birthday-module {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 999999 !important;
+    width: auto !important;
+    text-align: center !important;
+    pointer-events: none !important; /* Important: Allow clicks to pass through */
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* Birthday message styling with semi-transparent background */
+.birthday-message {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px 50px;
+    border-radius: 15px;
+    font-size: 2em;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in;
+    margin: 20px;
+    white-space: nowrap;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    max-width: 90vw;
+    overflow: hidden;
+}
+
+/* Message fade-in animation */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Force module visibility during celebration */
+.MMM-Birthday-Paged {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* Semi-transparent overlay for dimming other modules */
+.birthday-dim-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999997;
+    pointer-events: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Debug information panel */
+.debug-info {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 12px;
+    z-index: 1000000;
+    border-radius: 5px;
+    text-align: left;
+    max-width: 300px;
+    max-height: 150px;
+    overflow: auto;
+    pointer-events: none;
+}
