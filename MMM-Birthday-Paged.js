@@ -14,7 +14,7 @@ Module.register("MMM-Birthday-Paged", {
         birthdays: [],           
         fireworkDuration: "infinite",
         confettiDuration: "infinite",
-        debug: true,             
+        debug: false,             
         startupDelay: 2000,
         immersiveMode: true  // NEW parameter: true = dim other modules (current behavior)
     },
@@ -91,14 +91,19 @@ Module.register("MMM-Birthday-Paged", {
             ]
         };
         
-        // Initiate birthday checks
-        this.scheduleNextCheck();
+        // We won't schedule birthday checks here anymore
+        // Instead we'll wait for ALL_MODULES_STARTED notification
     },
 
     notificationReceived: function(notification, payload, sender) {
         if (notification === "MODULE_DOM_CREATED") {
             this.log("MODULE_DOM_CREATED notification received");
             this.moduleInitialized = true;
+        } 
+        else if (notification === "ALL_MODULES_STARTED") {
+            this.log("ALL_MODULES_STARTED notification received");
+            // Start the birthday checks AFTER all modules have started
+            this.scheduleNextCheck();
         }
     },
 
@@ -216,11 +221,13 @@ Module.register("MMM-Birthday-Paged", {
     scheduleNextCheck: function() {
         this.log("Scheduling birthday checks");
         
+        // Initial check with a delay to ensure all modules are ready
         setTimeout(() => {
             this.log("Performing initial birthday check after startup delay");
             this.checkBirthdays();
         }, this.config.startupDelay);
 
+        // Set up periodic checks
         setInterval(() => {
             this.checkBirthdays();
         }, 60000);
