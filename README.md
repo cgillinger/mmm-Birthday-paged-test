@@ -4,6 +4,8 @@ A MagicMirror² module that celebrates birthdays with animated fireworks and con
 
 This is a specialized version of [MMM-Birthday](https://github.com/cgillinger/MMM-Birthday) optimized for multi-page MagicMirror setups. If you're running a single-page setup where you want birthday celebrations to overlay existing content, please use the original [MMM-Birthday](https://github.com/cgillinger/MMM-Birthday) module instead.
 
+> This is a personal hobby project I build for my own use and publish in case it's useful to someone else. I work on it in my spare time, so issues and PRs are welcome but replies may be slow. Use at your own risk.
+
 ## Key Features
 
 - Designed for dedicated celebration pages in multi-page setups
